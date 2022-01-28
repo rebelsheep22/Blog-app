@@ -1,0 +1,35 @@
+<body>
+  <div class="login-form-container">
+    <h1 class="header">Login</h1>
+    <form [formGroup]="loginForm" class="login-form" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input matInput type="email" formControlName="email" />
+        <mat-label for="email">Email</mat-label>
+        <mat-error *ngIf="loginForm.controls['email'].errors"
+          >Invalid Email format</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" formControlName="password" />
+        <mat-label for="password">Password</mat-label>
+        <mat-error *ngIf="loginForm.controls['password'].errors">
+          Password must be 4-30 characters long with at least 1 numeric
+          character
+        </mat-error>
+      </mat-form-field>
+      <div class="login-form__form-btns">
+        <button
+          mat-raised-button
+          color="primary"
+          class="form-btn submit-btn"
+          type="submit"
+        >
+          Login
+        </button>
+        <button mat-stroked-button class="form-btn" (click)="click()">
+          Register
+        </button>
+      </div>
+    </form>
+  </div>
+</body>

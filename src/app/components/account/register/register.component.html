@@ -1,0 +1,67 @@
+<body>
+  <div class="register-form-container">
+    <h1 class="header">Register</h1>
+    <form
+      [formGroup]="registerForm"
+      class="register-form"
+      (ngSubmit)="onSubmit()"
+    >
+      <mat-form-field class="register-form__email">
+        <input matInput type="email" formControlName="email" />
+        <mat-label for="email">Email</mat-label>
+        <mat-error *ngIf="registerForm.controls['email'].errors?.['required']"
+          >Email is Required</mat-error
+        >
+        <mat-error *ngIf="registerForm.controls['email'].errors?.['pattern']"
+          >Invalid Email Format</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field class="register-form__full-name">
+        <input matInput type="text" formControlName="fullName" />
+        <mat-label for="fullName">Full Name</mat-label>
+        <mat-error
+          *ngIf="registerForm.controls['fullName'].errors?.['required']"
+          >Full Name is required</mat-error
+        >
+        <mat-error
+          *ngIf="registerForm.controls['fullName'].errors?.['minlength']"
+          >Full Name must be longer than 5 characters</mat-error
+        >
+        <mat-error
+          *ngIf="registerForm.controls['fullName'].errors?.['maxlength']"
+          >Full Name must be no longer than 20 characters</mat-error
+        >
+      </mat-form-field>
+      <div class="register-form__passwords-container" formGroupName="passwords">
+        <mat-form-field class="register-form__password">
+          <input matInput type="password" formControlName="password" />
+          <mat-label for="password">Password</mat-label>
+          <mat-error >
+            Password must be 4-30 characters long with at least 1 numeric character
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="register-form_password">
+          <input matInput type="password" formControlName="repeatPassword" />
+          <mat-label for="repeatPassword">Repeat Password</mat-label>
+          <mat-error>
+            Passwords do not match
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="register-form__form-btns">
+        <button
+          class="form-btn submit-btn"
+          mat-raised-button
+          color="primary"
+          type="submit"
+          (click)="onSubmit()"
+        >
+          Register
+        </button>
+        <p class="form-login">
+          Already Registered ? <a (click)="backToLogin()">Log In</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</body>

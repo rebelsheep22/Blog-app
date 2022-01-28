@@ -1,0 +1,42 @@
+
+.register-form-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.register-form{
+display: flex;
+flex-direction: column;
+padding: 10px;
+width: 500px;
+border: 1px solid black;
+align-self: center;
+&__passwords-container{
+  display: flex;
+  flex-direction: column;
+}
+*{
+  padding-bottom: 10px;
+  label{
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+&__form-btns{
+  display: flex;
+  justify-content: flex-start;
+  .form-btn{
+    margin-right: 15px;
+    text-align: center;
+    height: 40px;
+  }
+  .form-login{
+   margin-top: 4px;
+    a{
+      color: #673ab7;
+      cursor: pointer;
+    }
+  }
+}
+}

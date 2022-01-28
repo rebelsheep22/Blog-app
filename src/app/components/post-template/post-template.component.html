@@ -1,0 +1,22 @@
+<button mat-raised-button color="accent" class="form-btn" (click)="addNewPost()">
+  Add Post
+</button>
+<div class="container">
+
+  <div class="post" *ngFor="let post of posts">
+    <h1 class="header">{{post.title}}</h1>
+    <div class="post__image">
+      <img src="data:image/png;base64,{{post.imgURL}}" alt="" />
+    </div>
+    <div class="post__text">
+      <p class="post__description">
+        {{post.description}}...<a href=""> see more </a>
+      </p>
+    </div>
+    <div>
+      <p>
+        Date Added: {{post.uploadDate}}
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+
+.login-form-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-form{
+display: flex;
+flex-direction: column;
+padding: 10px;
+width: 500px;
+border: 1px solid black;
+align-self: center;
+*{
+  padding-bottom: 10px;
+  label{
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+&__form-btns{
+  display: flex;
+  justify-content: flex-start;
+  height: 40px;
+  text-align: center;
+  .form-btn{
+    margin-right: 15px;
+  }
+  .form-login{
+    a{
+      color: #673ab7;
+
+    }
+  }
+}
+}

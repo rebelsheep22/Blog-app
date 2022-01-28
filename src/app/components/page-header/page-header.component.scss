@@ -1,0 +1,13 @@
+@import "../../../assets/color-palette.scss";
+.header{
+  display: flex;
+  justify-content: flex-end;
+  border: 1px solid;
+  height: 60px;
+  background:$main-color;
+  overflow:hidden;
+  width: 100%;
+  z-index: 999px;
+  top:0;
+  position: sticky;
+}

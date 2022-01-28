@@ -1,0 +1,21 @@
+.post{
+  width: 20%;
+  margin: 10px;
+  border: 1px solid #0d1137;
+  border-radius: 5px;
+  padding: 5px;
+  &__image{
+
+    img{
+      width:100%;
+    }
+  }
+  &__text{
+    display: flex;
+  }
+}
+.container{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

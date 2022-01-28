@@ -1,0 +1,21 @@
+
+<div mat-dialog-content class="create-post-container">
+  <h1 mat-dialog-title >Add Post</h1>
+  <form [formGroup]="createPostForm" class="create-post-form">
+    <mat-form-field>
+      <input type="text" matInput formControlName="title">
+      <mat-label for="title">Title</mat-label>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea  matInput formControlName="content" placeholder="Content"></textarea>
+    </mat-form-field>
+<div class="upload-pic">
+      <input type="file" required  (change)="fileChoosen($event)">
+      <label for="imgURL" class="md-button md-raised md-primary">Choose Files</label>
+    </div>
+    </form>
+    <div mat-dialog-actions>
+      <button mat-button (click)="savePost()" [disabled]="disableSubmit || createPostForm.invalid" [mat-dialog-close]="createPostForm.controls">Save Post</button>
+      <button (click)="cancelClick()">Cancel</button>
+    </div>
+</div>
